@@ -43,10 +43,11 @@ compare_datasets <- compare_dcat_datasets |>
   )
 
 # Remove datasets that haven't been updated on DCAT since the CKAN updates
-compare_datasets <- compare_datasets |> 
-  filter(
-    dcat_modified > ckan_modified
-  )
+# Update 2026-04-09: actually, just compare them all! :D 
+# compare_datasets <- compare_datasets |> 
+#   filter(
+#     dcat_modified > ckan_modified
+#   )
 
 datasets_to_update <- compare_datasets |> 
   pull(title)

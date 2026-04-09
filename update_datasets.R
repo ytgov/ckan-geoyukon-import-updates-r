@@ -55,3 +55,41 @@ for (i in seq_along(ckan_resources_to_update_parameters$resource_id)) {
   Sys.sleep(0.3)
 }
 
+
+# Add new resources where applicable --------------------------------------
+
+geoyukon_import_datasets_to_add_resources <- geoyukon_import_datasets |> 
+  select(title, name) |> 
+  rename(
+    dataset_name = "name",
+    dataset_title = "title"
+  )
+
+resources_to_add <- resources_to_add |> 
+  left_join(geoyukon_import_datasets_to_add_resources, by = "dataset_title")
+
+# Loop through and add new resources ---------------------------------------
+
+for (i in seq_along(resources_to_add$dcat_resource_url)) { 
+  cat("Adding resource ", resources_to_add$resource_title[i], " ", resources_to_add$dcat_resource_url[i], "to", resources_to_add$dataset_title[i], "\n")
+  
+  # ckan_action(
+  #   "resource_update",
+  #   body = list(
+  #     id = ckan_resources_to_update_parameters$resource_id[i],
+  #     url = ckan_resources_to_update_parameters$url[i]
+  #   )
+  # )
+  
+  resource_create(
+    package_id = resources_to_add$dataset_name[i],
+    name = resources_to_add$resource_title[i],
+    rcurl = resources_to_add$dcat_resource_url[i],
+    format = "HTML"
+  )
+  
+  # Limit to one entry for testing
+  # break;
+  
+  Sys.sleep(0.3)
+}

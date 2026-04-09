@@ -180,3 +180,21 @@ resources_to_update <- compare_resources |>
     resource_title,
     dcat_resource_url
   )
+
+resources_to_add <- compare_resources |> 
+  filter(dcat_url_is_updated == "new") |> 
+  select(
+    dataset_title,
+    resource_title,
+    dcat_resource_url
+  )
+
+resources_to_delete <- compare_resources_ckan |> 
+  left_join(
+    compare_resources_dcat,
+    by = c("dataset_title", "resource_title")
+  ) |> 
+  filter(is.na(dcat_resource_url))
+
+resources_to_delete |> 
+  write_csv("output/resources_to_delete_from_ckan.csv")

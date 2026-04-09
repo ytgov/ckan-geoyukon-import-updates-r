@@ -102,6 +102,17 @@ convert_dcat_keywords_to_tags <- function(keywords, filter_short_tags = TRUE, ad
     
   }
   
+  # Add generic geoyukon-import tag to be able to match for updates later
+  new_row = tibble_row(
+    name = "geoyukon-import"
+  )
+  
+  tags <- tags |>
+    bind_rows(
+      new_row
+    ) |> 
+    arrange(name)
+  
   if(add_geoyukon_datestamp == TRUE) {
     
     new_row = tibble_row(
@@ -115,6 +126,10 @@ convert_dcat_keywords_to_tags <- function(keywords, filter_short_tags = TRUE, ad
       arrange(name)
     
   }
+  
+  # Avoid any accidental duplicates
+  tags <- tags |>
+    distinct()
   
   tags
   

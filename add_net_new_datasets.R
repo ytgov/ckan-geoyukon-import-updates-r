@@ -207,7 +207,7 @@ net_new_datasets <- net_new_datasets_dcat |>
     description = clean_dcat_description_text(description)
   )
 
-net_new_datasets$description
+# net_new_datasets$description
 
 
 for (i in seq_along(net_new_datasets$title)) { 

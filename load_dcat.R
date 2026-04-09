@@ -122,7 +122,8 @@ resources_output <- links_resources |>
       str_detect(resource_url, "map-data.service.yukon.ca") ~ "Shape files",
       str_detect(resource_url, "yukon.maps.arcgis.com/home") ~ "ArcGIS Online layers",
       str_detect(resource_url, "mapservices.gov.yk.ca/imagery") ~ "Image server",
-      str_detect(resource_url, "clss.nrcan-rncan.gc.ca/data-donnees/sgb_datasets/yt/") ~ "GeoDB file",
+      str_detect(resource_url, "clss.nrcan-rncan.gc.ca/data-donnees/sgb_datasets/yt/_YT/YT_gdb_eng.zip") ~ "GeoDB file (English)",
+      str_detect(resource_url, "clss.nrcan-rncan.gc.ca/data-donnees/sgb_datasets/yt/_YT/YT_gdb_fra.zip") ~ "GeoDB file (French)",
       .default = "(Resource title)"
     )
   )

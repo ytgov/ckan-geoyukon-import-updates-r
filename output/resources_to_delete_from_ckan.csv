@@ -1,7 +1,4 @@
 dataset_title,ckan_resource_url,resource_title,dcat_resource_url
-Forest Inventory Label Additional Table,https://yukon.maps.arcgis.com/home/item.html?id=d4d8088b967041298e1bd128db5520b7,ArcGIS Online layers,NA
-Forest Inventory Label Additional Table,https://map-data.service.yukon.ca/GeoYukon/Mining/Quartz_Leases_50k/,Shape files,NA
-Forest Inventory Label Additional Table,https://yukon.maps.arcgis.com/sharing/rest/content/items/46fa66d927ed4caf8daee29a9f38588a/info/metadata/metadata.xml?format=default&output=html,XML metadata,NA
 Geochronology,https://data.geology.gov.yk.ca/Compilation/22,Yukon Geological Survey compilation metadata,NA
 Geochronology,https://mapservices.gov.yk.ca/geoyukon/?scale=640000&center=381514.20828259934%2C691070.7215697523&layers=1UQ3ku1cw1p9,Yukon geochronology - GeoYukon,NA
 Geochronology,https://map-data.service.yukon.ca/GeoYukon/Geological/Geochronology/,Geochronology - Data,NA
@@ -10,5 +7,11 @@ Lithogeochemistry,https://data.geology.gov.yk.ca/Compilation/35,Yukon Geological
 Lithogeochemistry,https://mapservices.gov.yk.ca/geoyukon/?layers=1UQ3ku16w5Kn,Lithogeochemistry - GeoYukon,NA
 Lithogeochemistry,https://map-data.service.yukon.ca/GeoYukon/Geological/Lithogeochemistry/,Lithogeochemistry - Data,NA
 Lithogeochemistry,https://ygsftp.gov.yk.ca/YGSIDS/metadata/Lithogeochemistry_Metadata.zip,Lithogeochemistry - Metadata,NA
-Yukon High Resolution Satellite Imagery,https://map-data.service.yukon.ca/GeoYukon/Emergency_Management/Attack_Bases/,Shape files,NA
-Yukon Medium Resolution Satellite Imagery,https://map-data.service.yukon.ca/GeoYukon/Base/Watercourses_1M/,Shape files,NA
+Forest Inventory Label Additional Table,https://yukon.maps.arcgis.com/home/item.html?id=d4d8088b967041298e1bd128db5520b7,ArcGIS Online layers,NA
+Forest Inventory Label Additional Table,https://map-data.service.yukon.ca/GeoYukon/Mining/Quartz_Leases_50k/,Shape files,NA
+Forest Inventory Label Additional Table,https://yukon.maps.arcgis.com/sharing/rest/content/items/46fa66d927ed4caf8daee29a9f38588a/info/metadata/metadata.xml?format=default&output=html,XML metadata,NA
+Footprints Yukon Aerial Imagery,https://yukon.maps.arcgis.com/home/item.html?id=373bb94ffcbb475691d9ce7e1e250f9f,ArcGIS Online layers,NA
+Footprints Yukon Aerial Imagery,https://map-data.service.yukon.ca/GeoYukon/Imagery/Footprints_Aerial_Imagery/,Shape files,NA
+Footprints Yukon Aerial Imagery,https://yukon.maps.arcgis.com/sharing/rest/content/items/373bb94ffcbb475691d9ce7e1e250f9f/info/metadata/metadata.xml?format=default&output=html,XML metadata,NA
+Water wells,https://service.yukon.ca/water-data/shiny/?page=WWR&lang=en,Water Well Registry,NA
+Water wells,https://service.yukon.ca/water-data/shiny/?page=WWR&lang=fr,Registre des puits d’eau,NA

@@ -19,7 +19,8 @@ compare_dataset_descriptions <- geoyukon_import_datasets |>
 dcat_dataset_descriptions <- dcat_datasets |> 
   select(
     title,
-    description
+    description,
+    keyword
   ) |> 
   rename(
     dcat_raw_description = "description"
@@ -56,13 +57,15 @@ for (i in seq_along(descriptions_to_update$name)) {
   
   package_id = descriptions_to_update$name[i]
   dataset_description = descriptions_to_update$dcat_clean_description[i]
+  tags = convert_dcat_keywords_to_tags(descriptions_to_update$keyword[[i]])
   
-  cat(package_id, dataset_description)
+  cat("Updating description for ", package_id)
   
   package_patch(
     list(
       id = package_id,
       notes = dataset_description
+      # tags = tags
     )
   )
   

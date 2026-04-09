@@ -68,6 +68,9 @@ geoyukon_import_datasets_to_add_resources <- geoyukon_import_datasets |>
 resources_to_add <- resources_to_add |> 
   left_join(geoyukon_import_datasets_to_add_resources, by = "dataset_title")
 
+resources_to_add <- resources_to_add |> 
+  filter(! is.na(dataset_name))
+
 # Loop through and add new resources ---------------------------------------
 
 for (i in seq_along(resources_to_add$dcat_resource_url)) { 

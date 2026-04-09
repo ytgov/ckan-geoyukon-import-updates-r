@@ -2,60 +2,6 @@ source("compare_sources.R")
 
 # Add net new datasets as new publications in CKAN
 
-convert_dcat_keywords_to_tags <- function(keywords, filter_short_tags = TRUE, add_geoyukon_datestamp = TRUE) {
-  
-  # tags <- tibble(name = net_new_datasets$keyword[[1]])
-  tags <- tibble(raw_name = keywords)
-  
-  tags <- tags |> 
-    mutate(
-      name = get_name_from_title(raw_name)
-    ) |> 
-    select(name) |> 
-    distinct()
-  
-  if(filter_short_tags == TRUE) {
-    
-    tags <- tags |> 
-      filter(
-        str_length(name) > 2
-      )
-    
-  }
-  
-  # Add generic geoyukon-import tag to be able to match for updates later
-  new_row = tibble_row(
-    name = "geoyukon-import"
-  )
-  
-  tags <- tags |>
-    bind_rows(
-      new_row
-    ) |> 
-    arrange(name)
-  
-  if(add_geoyukon_datestamp == TRUE) {
-    
-    new_row = tibble_row(
-      name = str_c("geoyukon-import-", get_date_stamp())
-    )
-    
-    tags <- tags |>
-      bind_rows(
-        new_row
-      ) |> 
-      arrange(name)
-    
-  }
-  
-  # Avoid any accidental duplicates
-  tags <- tags |>
-    distinct()
-  
-  tags
-  
-}
-
 add_geospatial_layer_ckan_package <- function(title, description, homepage_url, keywords = list()) {
   
   cat("Adding ", title, "to CKAN.\n")

@@ -1,9 +1,4 @@
-library(tidyverse)
-library(fs)
-library(readxl)
-library(rmarkdown)
-library(janitor)
-library(ckanr)
+source("lib/helpers.R")
 
 run_start_time <- now()
 paste("Start time:", run_start_time)

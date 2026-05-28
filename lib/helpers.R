@@ -1,3 +1,12 @@
+library(tidyverse)
+library(jsonlite)
+library(fs)
+library(readxl)
+library(rmarkdown)
+library(janitor)
+library(ckanr)
+
+
 # Helper functions for the GeoYukon import to CKAN scripts
 
 clean_dcat_description_text <- function(description_text) {

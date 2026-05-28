@@ -26,6 +26,10 @@ This will output several CSV files to the `output/` folder, including:
 - datasets that have been deleted (or renamed) on ArcGIS Online but not deleted (or renamed) on open.yukon.ca
 - resources that have been deleted on ArcGIS Online but not deleted from the relevant dataset on open.yukon.ca
 
+Note that this caches the DCAT feed JSON results in the `input/` folder; if changes take place on ArcGIS Online the same day you may need to delete today's `input/` subfolder to retrieve the latest changes.
+
+If datasets have been deleted or renamed on ArcGIS Online, the equivalent changes need to be made manually on open.yukon.ca using the regular admin interface.
+
 ### Updating dataset resource URLs on open.yukon.ca
 
 Run `update_datasets_resources.R` to update the resource URLs for datasets that have been updated on ArcGIS Online (and already exist in open.yukon.ca). This is helpful if the URLs for REST APIs or shapefile downloads on the FTP server have changed.
